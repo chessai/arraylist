@@ -32,7 +32,8 @@ library
     ArrayList
   build-depends:
       base >=4.7 && < 4.13
-    , primitive >= 0.6.4 && < 0.8
+    , primitive >= 0.7 && < 0.8
+    , primitive-addr >= 0.1 && < 0.2
     , initialize >= 0.1.1 && < 0.2
   hs-source-dirs:
     src
