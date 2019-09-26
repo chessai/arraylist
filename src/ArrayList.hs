@@ -12,7 +12,7 @@
 -----------------------------------------------------------------------------------
 
 module ArrayList
-  ( ArrayList
+  ( ArrayList(..)
   , size
   , with
   , new
@@ -101,7 +101,7 @@ minimizeMemory xs@(ArrayList start len bufLen ptr)
       FMAlloc.free ptr
       return (ArrayList 0 len (div bufLen 2) newPtr)
   | otherwise = return (ArrayList start len bufLen ptr)
-  
+
 wordSz :: Int; wordSz = Primitive.sizeOf (undefined :: Int); {-# INLINE wordSz #-}
 initialSize :: Int; initialSize = 4; {-# INLINE initialSize #-}
 
@@ -290,7 +290,7 @@ primArrayToListN len arr = go 0
   go !ix = if ix < len
     then PrimArray.indexPrimArray arr ix : go (ix + 1)
     else []
- 
+
 -- | Does not affect the contents of the ArrayList
 showDebug :: forall a. (Prim a, Storable a, Show a) => ArrayList a -> IO String
 showDebug (ArrayList start len _ ptr) = do
