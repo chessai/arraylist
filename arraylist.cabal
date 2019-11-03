@@ -31,7 +31,7 @@ library
   exposed-modules:
     ArrayList
   build-depends:
-      base >=4.7 && < 4.13
+      base >=4.7 && < 4.14
     , primitive >= 0.7 && < 0.8
     , primitive-addr >= 0.1 && < 0.2
     , initialize >= 0.1.1 && < 0.2
